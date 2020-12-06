@@ -10,7 +10,7 @@ client.on('message', async (message: IMessage) => {
   dispatcher.register('mencionar', new QuoteCommand());
   dispatcher.register('cep', new CepCommand(message.body));
 
-  if (message.body.startsWith('!')) {
+  if (message.body.startsWith('#')) {
     dispatcher.dispatch(message.body.slice(1), message);
   }
 });
